@@ -1,0 +1,27 @@
+a = input("Enter a boy name: ")
+b = input("Enter a girl name: ")
+
+a1 = list(a)
+b1 = list(b)
+
+for i in range(len(a1)):
+    for j in range(len(b1)):
+        if a1[i] == b1[j]:
+            a1[i] = '2'
+            b1[j] = '2'
+            break  
+c = 0
+for ch in a1:
+    if ch != '2':
+        c += 1
+for ch in b1:
+    if ch != '2':
+        c += 1
+
+res = list("FLAMES")
+f = 0
+for i in range(5):
+    f = (f + (c - 1)) % len(res)
+    res.pop(f)
+
+print(res[0])
